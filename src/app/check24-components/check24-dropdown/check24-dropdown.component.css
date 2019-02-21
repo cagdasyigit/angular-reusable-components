@@ -1,0 +1,9 @@
+label {
+    display: block;
+    margin-bottom: 16px;
+}
+
+select {
+    width: 100%;
+    padding: 8px 16px;
+}

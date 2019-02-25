@@ -1,11 +1,38 @@
-<div *ngIf="name != null && name !== ''">
+<div class="check24-dropdown-container" *ngIf="name != null && name !== ''">
     <label for="{{ name }}" *ngIf="label != null && label !== ''">{{ label }}</label>
-    <select [id]="name" [name]="name" [(ngModel)]="selectedOption" (change)="onChange($event)">
+
+    <!-- Working Native Select -->
+    <!-- select [id]="name" [name]="name" [(ngModel)]="selectedOption" (change)="onChange($event)">
         <option [value]="''">Please select an item</option>
         <option *ngFor="let option of options" [value]="option.code">
             {{ option.displayValue }}
         </option>
-    </select>
+    </select -->
+
+    <!-- Selection Container -->
+    <div tabindex="1" [id]="name" class="custom-select"
+        [ngClass]="{'focused': focused}" 
+        (blur)="focused = false"
+        (click)="onClickSelect()"
+        (keydown)="onKeydownSelect($event)">
+
+        <!-- Current Selected -->
+        <div class="selected">
+            {{ options | selectedValue: selectedOption }}
+        </div>
+
+        <!-- Selection List -->
+        <ul class="custom-select-list">
+            <li *ngFor="let option of options" 
+                [ngClass]="{
+                    'selection': option.code === selection, 
+                    'selected': option.code === selectedOption
+                }"
+                (click)="onClickOption(option.code)">
+                {{ option.displayValue }}
+            </li>
+        </ul>
+    </div>
 </div>
 <div *ngIf="name == null || name === ''">
     <p>You should pass a name for form field component!</p>

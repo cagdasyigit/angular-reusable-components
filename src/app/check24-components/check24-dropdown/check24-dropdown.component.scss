@@ -1,0 +1,68 @@
+.check24-dropdown-container {
+
+    /* For Native Select
+    select {
+        width: 100%;
+        padding: 8px 16px;
+    }
+    */
+
+    label {
+        display: block;
+        margin-bottom: 16px;
+    }
+
+    .custom-select {
+        appearance: menulist;
+        -moz-appearance: menulist;
+        -webkit-appearance: menulist;
+        position: relative;
+        height: 36px;
+        border: 1px solid #ddd;
+        padding: 8px 16px;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        &.focused {
+            ul.custom-select-list {
+                display: block;
+            }
+        }
+
+        ul.custom-select-list {
+            display: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            width: 100%;
+            top: 36px;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            list-style: none;
+            z-index: 2;
+            border: none;
+
+            li {
+                padding: 8px;
+                border-bottom: 1px solid #ddd;
+                z-index: 3;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &.selection:not(.selected), &:hover {
+                    background-color: #eee;
+                    color: #000;
+                }
+
+                &.selected {
+                    background-color: #1976d2;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

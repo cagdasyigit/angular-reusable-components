@@ -1,0 +1,35 @@
+main {
+    display: flex;
+    justify-content: space-between;
+    place-content: start;
+    padding: 32px;
+
+    .example {
+        flex: 1;
+        margin: 16px;
+        padding: 16px 32px 32px 32px;
+        box-shadow: 0 16px 32px -16px #555;
+        border: 1px solid #ddd;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child{
+            margin-right: 0;
+        }
+
+        @media screen and (max-width: 1200px) {
+            width: auto;
+            margin: 16px 0;
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        display: block;
+    }
+}

@@ -1,34 +1,37 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<header style="text-align:center">
     <h1>
         Assignment Workout
     </h1>
-</div>
-<h2>Basic dropdown:</h2>
-<ul>
-    <check24-dropdown
-        [name]="'example-1'"
-        [label]="'Example Dropdown 1'"
-        [options]="options1"
-    ></check24-dropdown>
-</ul>
+</header>
 
-<h2>Dropdown with a selected option:</h2>
-<ul>
-    <check24-dropdown
-        [name]="'example-2'"
-        [label]="'Example Dropdown 2'"
-        [options]="options2"
-        [selectedOption]="'2-1'"
-    ></check24-dropdown>
-</ul>
+<main>
+    <section class="example">
+        <h2>Basic dropdown:</h2>
+        <check24-dropdown
+            [name]="'example-1'"
+            [label]="'Example Dropdown 1'"
+            [options]="options1"
+        ></check24-dropdown>
+    </section>
 
-<h2>Dropdown with an alert when selected:</h2>
-<ul>
-    <check24-dropdown
-        [name]="'example-3'"
-        [label]="'Example Dropdown 3'"
-        [options]="options3"
-        (onSelected)="onOption3Selected($event)"
-    ></check24-dropdown>
-</ul>
+    <section class="example">
+        <h2>Dropdown with a selected option:</h2>
+        <check24-dropdown
+            [name]="'example-2'"
+            [label]="'Example Dropdown 2'"
+            [options]="options2"
+            [selectedOption]="'2-1'"
+        ></check24-dropdown>
+    </section>
+
+    <section class="example">    
+        <h2>Dropdown with an alert when selected:</h2>
+        <check24-dropdown
+            [name]="'example-3'"
+            [label]="'Example Dropdown 3'"
+            [options]="options3"
+            (selected)="onOption3Selected($event)"
+        ></check24-dropdown>
+    </section>
+</main>

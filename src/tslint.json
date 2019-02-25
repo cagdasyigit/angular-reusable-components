@@ -10,7 +10,7 @@
         "component-selector": [
             true,
             "element",
-            "app",
+            ["app", "check24"],
             "kebab-case"
         ]
     }
